@@ -72,7 +72,41 @@ body {
 .main {
     width: 100%;
     height: calc(100vh - 12rem);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-img {
+    width: 20rem;
+    margin: 4rem 0;
+}
+.main-general-seting {
+    font-size: 3.2rem;
+    font-family: 'Titillium Web', sans-serif;
+    font-style: italic;
+    line-height: 4.4rem;
+    color: rgb(31, 77, 79);
+    border-radius: 2rem;
+    background: linear-gradient(175deg, rgb(255, 255, 255) 6%, rgb(150, 150, 150));
+    box-shadow: 0.8rem 0.8rem 0.2rem 0.1rem rgba(24, 24, 24, 0.2);
+    transition: all 0.6s;
+}
+.btn-main {
+    font-weight: 700;
+    padding: 0.5rem 2rem;
+}
+.btn-main:hover {
+    color: rgb(73, 168, 219);
+}
+.btn-main:active {
+    box-shadow: none;
+    color: rgba(24, 24, 24, 0.2);
+}
+.main-text {
+    font-weight: 500;
+    padding: 1rem 2rem;
+    margin-top: 4rem;
 }
 .footer {
     width: 100%;
