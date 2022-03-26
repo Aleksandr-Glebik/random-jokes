@@ -83,5 +83,11 @@ function setLanguages(event) {
 }
 
 function getTranslate(obj) {
-    console.log('obj', obj);
+    let allElementsWithDataAttr = document.querySelectorAll('[data-i18]')
+    allElementsWithDataAttr.forEach((el) => {
+        if (Object.keys(obj).includes(el.dataset.i18)) {
+            el.textContent = ''
+            el.textContent = obj[el.dataset.i18]
+        }
+    })
 }
