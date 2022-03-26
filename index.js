@@ -1,20 +1,28 @@
 // const url = 'https://api.icndb.com/jokes'
-const url = 'https://type.fit/api/quotes'
+
 const mainText = document.querySelector('.main-text')
 const mainTextAuthor = document.querySelector('.main-text-author')
+const btnMain = document.querySelector('.btn-main')
+
+btnMain.addEventListener('click', getData)
 
 async function getData() {
-    const res = await fetch(url)
-    const data = await res.json()
-    // console.log(data)
-    getRandomObj(data)
+    const url = 'https://type.fit/api/quotes'
+    try {
+        const res = await fetch(url)
+        const data = await res.json()
+        // console.log(data)
+        getRandomObj(data)
+    } catch(err) {
+        displayError(err)
+    }
 }
 
 getData()
 
-function displayText(data) {
-    mainText.textContent = `"${data.text}"`
-    mainTextAuthor.textContent = data.author
+function displayText(value) {
+    mainText.textContent = `"${value.text}"`
+    mainTextAuthor.textContent = value.author
 }
 
 function getRandomObj(data) {
@@ -28,4 +36,10 @@ function getRandomObj(data) {
         // console.log('randomObj', randomObj)
         displayText(randomObj)
     }
+}
+
+function displayError(err) {
+    // console.log('err', err);
+    mainText.textContent = `Sorry, try again, error: ${err}"`
+    mainTextAuthor.textContent = `Sorry, try again!`
 }
