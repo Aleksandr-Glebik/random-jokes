@@ -10,7 +10,7 @@ const headerText = document.querySelector('.header-text')
 
 let lang = 'en'
 
-btnMain.addEventListener('click', getData)
+// btnMain.addEventListener('click', getData)
 btnMain.addEventListener('click', addAnimation)
 headerBlock.addEventListener('click', setLanguages)
 
@@ -25,8 +25,19 @@ async function getData() {
         displayError(err)
     }
 }
+// getData()
 
-getData()
+setTimeout(() => {
+    if (lang === 'en') {
+        addListenerForEnText()
+        getData()
+    } else if (lang === 'ru') {
+        addListenerForRuText()
+        getQuotes()
+    }
+}, 100)
+
+
 
 function displayText(value) {
     mainText.textContent = `"${value.text}"`
@@ -77,10 +88,14 @@ function setLanguages(event) {
             lang = 'en'
             // console.log('i18Obj', i18Obj[lang]);
             getTranslate(i18Obj[lang])
+            console.log('lang', lang);
+            addListenerForEnText()
         } else if (laguage === 'ru') {
             lang = 'ru'
             // console.log('i18Obj', i18Obj[lang]);
             getTranslate(i18Obj[lang])
+            console.log('lang', lang);
+            addListenerForRuText()
         }
     }
 }
@@ -94,3 +109,24 @@ function getTranslate(obj) {
         }
     })
 }
+
+async function getQuotes() {
+    const quotes = 'quotes.json';
+    const res2 = await fetch(quotes);
+    const data2 = await res2.json();
+    // console.log(data2);
+    getRandomObj(data2)
+}
+
+// getQuotes()
+
+function addListenerForEnText() {
+    btnMain.removeEventListener('click', getQuotes)
+    btnMain.addEventListener('click', getData)
+}
+
+function addListenerForRuText() {
+    btnMain.removeEventListener('click', getData)
+    btnMain.addEventListener('click', getQuotes)
+}
+
