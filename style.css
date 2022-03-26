@@ -18,6 +18,8 @@ body {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+    box-shadow: 0rem 0rem 1rem 1rem rgb(24 24 24 / 20%);
+    border-radius: 3rem;
 }
 .header {
     width: 100%;
@@ -76,6 +78,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 2rem;
 }
 .main-img {
     width: 18rem;
@@ -111,6 +114,7 @@ body {
 .main-text-author {
     padding: 1rem 2rem;
     margin-top: 1rem;
+    margin-right: 30rem;
     align-self: flex-end;
 }
 .footer {

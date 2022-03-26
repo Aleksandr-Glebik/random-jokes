@@ -1,5 +1,7 @@
 // const url = 'https://api.icndb.com/jokes'
 const url = 'https://type.fit/api/quotes'
+const mainText = document.querySelector('.main-text')
+const mainTextAuthor = document.querySelector('.main-text-author')
 
 async function getData() {
     const res = await fetch(url)
@@ -11,7 +13,8 @@ async function getData() {
 getData()
 
 function displayText(data) {
-    console.log('data', data)
+    mainText.textContent = `"${data.text}"`
+    mainTextAuthor.textContent = data.author
 }
 
 function getRandomObj(data) {
