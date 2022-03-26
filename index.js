@@ -6,6 +6,7 @@ const mainTextAuthor = document.querySelector('.main-text-author')
 const btnMain = document.querySelector('.btn-main')
 const img = document.querySelector('.main-img')
 const headerBlock = document.querySelector('.header-block')
+const headerText = document.querySelector('.header-text')
 
 let lang = 'en'
 
@@ -55,10 +56,12 @@ function addAnimation() {
     img.classList.add('active')
     mainText.classList.add('active-text')
     mainTextAuthor.classList.add('active-text')
+    headerText.classList.add('active-title')
     setTimeout(() => {
         img.classList.remove('active')
         mainText.classList.remove('active-text')
         mainTextAuthor.classList.remove('active-text')
+        headerText.classList.remove('active-title')
     }, 600)
 }
 

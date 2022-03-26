@@ -170,6 +170,9 @@ body {
 .active-text {
     animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+.active-title {
+    animation: text-shadow-drop-bottom 0.6s both;
+}
 
 @keyframes bounce-top {
     0% {
@@ -218,5 +221,14 @@ body {
     100% {
       transform: translateY(0);
       opacity: 1;
+    }
+}
+
+@keyframes text-shadow-drop-bottom {
+    0% {
+      text-shadow: 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+    100% {
+      text-shadow: 0 6px 18px rgba(255, 255, 255, 0.6);
     }
 }
