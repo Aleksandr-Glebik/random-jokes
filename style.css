@@ -278,7 +278,7 @@ body {
     margin-bottom: 2rem;
 }
 .footer-data {
-    width: 30rem;
+    width: 34rem;
 }
 }
 @media screen and (max-width: 425px) {
@@ -296,7 +296,7 @@ body {
     width: 100%;
 }
 .footer-data {
-    width: 20rem;
+    width: 22rem;
 }
 .footer-text {
     font-size: 1.8rem;
@@ -350,7 +350,7 @@ body {
     width: 100%;
 }
 .footer-data {
-    width: 18rem;
+    width: 22rem;
     margin-left: 1rem;
 }
 .footer-text {
